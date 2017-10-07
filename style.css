@@ -22,8 +22,8 @@
 }
 
 .container{
-  width: 800px;
-  margin: 0 auto;
+  width: auto;
+  margin: 0px auto;
 }
 
 .menu{
@@ -72,7 +72,7 @@ li:hover a{
 }
 
 h1{
-  margin-bottom: 0;
+  margin: 0;/*margin-bottom: 0*/
   text-align: center;
 }
 
@@ -100,7 +100,7 @@ td{
 }
 
 hr{
-  border: 0.5px solid #eee;
+  border: 1px solid #eee;
 }
 
 hr.bar{
@@ -110,13 +110,13 @@ hr.bar{
 
 .item{
   position: relative;
-  max-width:  30%;
   display: inline-block;
   margin-bottom: 10px;
 }
 
 .item img{
   width: 100%;
+  height: auto;
 }
 
 .item-info{
@@ -183,4 +183,68 @@ hr.bar{
 
 .form-row button:active{
   background-color: #407FC7;
+}
+
+@media screen and (min-width: 1024px){
+  .menu-button,
+  .menu-button-checkbox {
+    display: none;
+  }
+    /*漢堡按鈕，電腦版需隱藏*/
+}
+
+@media screen and (max-width: 1023px)
+{
+  .contanier {
+    width: auto;
+  }
+  .menu-button {
+    float: right;
+    font-size: 25px;
+    line-height:40px;
+    color: white;
+    background: transparent;
+    padding: 0 15px;
+    border: 0;
+  }
+  .menu-button-checkbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 35px;
+    opacity: 0;
+  }
+  .menu-button-checkbox:checked ~ .menu{
+    display: block;
+  }
+  .menu {
+    display: none;
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 40px;
+    width: 150px;
+    height: 100%;
+    background: #ff6600;
+  }
+  .menu li {
+    border: 0;
+    border-radius: 0;
+  }
+  #my-avatar{
+    width: 100%;
+  }
+  #my-avatar img{
+    display: block;
+    margin: -130px auto 10px auto;
+  }
+  .item{
+    max-width: 100%;
+  }
+  .form.contact-form{
+    width: 80%;
+  }
+  /*手機版的CSS都寫在這邊*/
 }
